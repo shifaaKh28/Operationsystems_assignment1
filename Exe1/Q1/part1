@@ -1,0 +1,6 @@
+#include<stdio.h>
+// dividing by zero.  this question aims to make a core and see what happens to the memory before the core dumps
+int main(){
+    printf("%d", 2/0);
+    return 0;
+}
