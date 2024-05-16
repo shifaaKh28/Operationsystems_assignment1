@@ -49,6 +49,11 @@ int main() {
     int rows, cols;
     scanf("%d %d", &rows, &cols);
 
+    if(rows != cols){
+        fprintf(stderr,"Invalid number of rows and columns");
+        exit(1);
+    }
+
     int **graph = (int **)malloc(rows * sizeof(int *));
     for (int i = 0; i < rows; i++) {
         graph[i] = (int *)malloc(cols * sizeof(int));
@@ -56,7 +61,7 @@ int main() {
             scanf("%d", &graph[i][j]);
             if (graph[i][j] < 0) {
                 fprintf(stderr, "Invalid input: Negative arc weight detected.\n");
-                return 1;
+                exit(1);
             }
         }
     }
